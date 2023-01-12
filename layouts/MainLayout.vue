@@ -4,7 +4,7 @@
          <my-logo></my-logo>
       </aside>
       <main class="main-box">
-            <router-view />
+            <slot />
       </main>
    </div>
 </template>

@@ -1,5 +1,5 @@
 import authApi from '@/api/auth'
-import {setItem} from '@/helpers/persistanceStorage'
+import {setItem} from '@/composables/persistanceStorage'
 
 export default {
   state:{ 
