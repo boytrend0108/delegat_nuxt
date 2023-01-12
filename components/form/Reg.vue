@@ -6,14 +6,14 @@
     @submit.prevent='onSubmit'
     >
     <h2 class="form-title">Регистрация</h2>
-    <mcv-validation-errors
+    <ValidationErrors
             v-if='validationErrors'
             :validation-errors='validationErrors'
           />
 
     <div class="input-box">
       <label for="name" class="form-label">ФИО</label>
-      <my-input 
+      <UiInput
         type="text" 
         id="name" 
         v-model.trim='username'
@@ -25,7 +25,7 @@
 
     <div class="input-box">
       <label for="email" class="form-label">E-mail</label>
-      <my-input
+      <UiInput
         type="email" 
         id="email"  
         v-model.trim='email'
@@ -37,7 +37,7 @@
 
     <div class="input-box">
       <label for="password" class="form-label">Пароль</label>
-      <my-input 
+      <UiInput
         type="password"
         class="input"
         id="password_1" 
@@ -61,14 +61,14 @@
 
     <div  class="input-box">
       <label for="phone" class="form-label">Повторите пароль</label>
-      <my-input
+      <UiInput
         type="password" 
         id="password_2"  
         v-model.trim='password_2'
         @input="validations"
         :class="{ invalid:!isValid }"
         >
-      </my-input>
+      </UiInput>
       <font-awesome-icon
         v-if="showPass2"
         icon="fa-solid fa-eye" 
@@ -89,12 +89,11 @@
       >Зарегистрироваться</my-button>
   </form>
   <router-link to="/login" class="form__question"> Уже есть аккaунт?</router-link>
-  <form-offer></form-offer>
+  <FormOffer></FormOffer>
   
 </template>
 
 <script>
-import FormOffer from '@/components/form/FormOffer.vue';
 import McvValidationErrors from '@/components/ValidationErrors'
 import {mapGetters, mapActions} from 'vuex'
 

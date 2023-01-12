@@ -1,7 +1,7 @@
 <template>
    <div class="container">
       <aside class="side-bar">
-         <my-logo></my-logo>
+         <UiLogo></UiLogo>
       </aside>
       <main class="main-box">
             <slot />
@@ -10,10 +10,9 @@
 </template>
 
 <script>
-import MyLogo from '@/components/UI/MyLogo.vue'
 export default {
-  components: { MyLogo },
-   name:'main-layout'
+    name: "main-layout",
+   //  components: { UiMYLogo }
 }
 </script>
 

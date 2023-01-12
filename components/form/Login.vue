@@ -8,7 +8,7 @@
 
     <div class="input-box">
       <label for="email" class="form-label">E-mail</label>
-      <my-input 
+      <UiInput
         type="email" 
         id="email" 
         @input="validations"
@@ -20,7 +20,7 @@
 
     <div class="input-box">
       <label for="password" class="form-label">Пароль</label>
-      <my-input 
+      <UiInput 
        type="password"
         class="input"
         id="password_1" 
@@ -41,28 +41,23 @@
           <p>abcABC123$</p>
     </div>
 
-    <my-button 
+    <UiButton 
     type="submit" 
     class="btn"
     :class="{ BtnEnable:!isBtnEnable }"
-    >Войти</my-button>
+    >Войти</UiButton>
   </form>
   <div class="question-box">
     <router-link to="/register" class="form__question"> Eще нет аккaунта?</router-link>
     <router-link to="/register" class="form__question"> Забыли пароль?</router-link>
-    <form-offer></form-offer>
+    <FormOffer />
   </div>
 </template>
 
 <script>
-import FormOffer from '@/components/form/FormOffer.vue';
 import { mapActions } from 'vuex';
-
-
   export default {
-    components:{
-      FormOffer
-    },
+
   data() {
     return {
       isValid: true,

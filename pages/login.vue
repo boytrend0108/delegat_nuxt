@@ -1,8 +1,8 @@
 <template>
-    <NuxtLayout :name="layout">
-      <my-dialog>
-      <form-login></form-login>
-    </my-dialog>
+  <NuxtLayout :name="layout">
+    <UiDialog>
+      <FormLogin></FormLogin>
+    </UiDialog>
   </NuxtLayout>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$store.state.count);
+  
   },
 };
 </script>

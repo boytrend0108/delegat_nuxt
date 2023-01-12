@@ -1,7 +1,7 @@
 <template>
    <div class="container">
       <aside class="side-bar">
-         <my-logo></my-logo>
+         <UiLogo></UiLogo>
       </aside>
       <main class="main-box">
          <header class="main-box__header"></header>
@@ -13,9 +13,7 @@
 </template>
 
 <script>
-import MyLogo from '@/components/UI/MyLogo.vue'
 export default {
-  components: { MyLogo },
    name:'customer-layout'
 }
 </script>
