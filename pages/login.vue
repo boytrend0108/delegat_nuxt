@@ -1,12 +1,18 @@
 <template>
-  <div>
-    <h1>Login Page!!</h1>
-  </div>
+    <NuxtLayout :name="layout">
+      <my-dialog>
+      <form-login></form-login>
+    </my-dialog>
+  </NuxtLayout>
 </template>
 
 <script>
 export default {
-  data() {},
+  data() {
+    return{
+      layout:'main-layout'
+    }
+  },
   mounted() {
     console.log(this.$store.state.count);
   },

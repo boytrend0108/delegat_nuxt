@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1>Registration page</h1>
-  </div>
+  <NuxtLayout :name="layout">
+    <h1>Registration Page!!!</h1>
+  </NuxtLayout>
 </template>
 
 <script>
-  export default {
-     
+export default {
+  data() {
+    return {
+      layout: "main-layout"
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>

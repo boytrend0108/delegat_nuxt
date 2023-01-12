@@ -6,7 +6,7 @@
       <main class="main-box">
          <header class="main-box__header"></header>
          <section class="main">
-            <router-view />
+            <slot />
          </section>
       </main>
    </div>
@@ -16,7 +16,7 @@
 import MyLogo from '@/components/UI/MyLogo.vue'
 export default {
   components: { MyLogo },
-   name:'main-layout'
+   name:'customer-layout'
 }
 </script>
 
