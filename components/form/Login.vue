@@ -28,8 +28,8 @@
         @input="validations"
         :class="{ invalid:!isValid }"  />
       <font-awesome-icon
-        v-if="showPass1"
-        icon="fa-solid fa-eye" 
+        v-show="showPass1"
+        icon="fa-solid fa-eye"
         class="icon"
         @click="showPassword('1')"
         />
@@ -37,7 +37,8 @@
           icon="fa-solid fa-eye-slash" 
           class="icon"  
           @click="showPassword('1')"
-          v-if="!showPass1" />
+          v-show="!showPass1" />
+          
           <p>abcABC123$</p>
     </div>
 
@@ -48,8 +49,8 @@
     >Войти</UiButton>
   </form>
   <div class="question-box">
-    <router-link to="/register" class="form__question"> Eще нет аккaунта?</router-link>
-    <router-link to="/register" class="form__question"> Забыли пароль?</router-link>
+    <router-link to="/registration" class="form__question"> Eще нет аккaунта?</router-link>
+    <router-link to="/registration" class="form__question"> Забыли пароль?</router-link>
     <FormOffer />
   </div>
 </template>
@@ -63,7 +64,6 @@ import { mapActions } from 'vuex';
       isValid: true,
       isBtnEnable: true,
       showPass1: true,
-      showPass2: true,
       email: '',
       password: '',
       email_reg: /.+@.+\..+/i,
