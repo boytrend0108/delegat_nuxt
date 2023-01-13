@@ -1,5 +1,9 @@
 <template>
-  <div class="dialog" v-if="showDialog">
+  <div 
+    class="dialog" 
+    v-if="showDialog"
+    @click.self="resetForm"
+    >
     <section class="dialog__content">
       <slot>
        
