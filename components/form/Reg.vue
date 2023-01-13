@@ -82,14 +82,17 @@
           v-if="!showPass2" />
     </div>
 
-    <my-button 
+    <UiButton 
       type="submit" 
       class="btn"
       :class="{ BtnEnable:!isBtnEnable }"
-      >Зарегистрироваться</my-button>
+      >Зарегистрироваться</UiButton>
   </form>
-  <router-link to="/login" class="form__question"> Уже есть аккaунт?</router-link>
-  <FormOffer></FormOffer>
+  <div class="question-box">
+    <NuxtLink to="/login" class="form__question"> Уже есть аккaунт?</NuxtLink>
+  </div>
+ 
+  <FormOffer />
   
 </template>
 
@@ -116,7 +119,7 @@ export default {
   },
   
   components: {
-    FormOffer, McvValidationErrors
+   McvValidationErrors
   },
  
   computed:{
@@ -223,6 +226,10 @@ form{
 .form__question:hover{
     text-decoration: underline;
   }
+  
+  .question-box{
+   @include question-box;
+  }
   .input{
   width: 100%;
   border: 2px solid #D9E1E7;
@@ -239,7 +246,7 @@ form{
 }
 .icon{
   position:absolute;
-  top: 4.2rem;
+  top: 4.1rem;
   right: 1.5rem;
   font-size: 1.5rem;
   color:$main-color;

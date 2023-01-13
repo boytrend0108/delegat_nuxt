@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout :name="layout">
-    <h1>Registration Page!!!</h1>
+    <UiDialog>
+      <FormReg></FormReg>
+   </UiDialog>
   </NuxtLayout>
 </template>
 

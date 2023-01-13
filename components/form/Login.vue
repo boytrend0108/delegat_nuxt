@@ -38,7 +38,6 @@
           class="icon"  
           @click="showPassword('1')"
           v-show="!showPass1" />
-          
           <p>abcABC123$</p>
     </div>
 
@@ -49,8 +48,8 @@
     >Войти</UiButton>
   </form>
   <div class="question-box">
-    <router-link to="/registration" class="form__question"> Eще нет аккaунта?</router-link>
-    <router-link to="/registration" class="form__question"> Забыли пароль?</router-link>
+    <NuxtLink to="/registration" class="form__question"> Eще нет аккaунта?</NuxtLink>
+    <NuxtLink to="/registration" class="form__question"> Забыли пароль?</NuxtLink>
     <FormOffer />
   </div>
 </template>
@@ -154,10 +153,7 @@ import { mapActions } from 'vuex';
     text-decoration: underline;
   }
   .question-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   @include question-box;
   }
 
   .icon{
