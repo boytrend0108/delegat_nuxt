@@ -1,99 +1,47 @@
 <template>
-  
-  <form 
-    class="form" 
-    id="reg-form" 
-    @submit.prevent='onSubmit'
-    >
-    <h2 class="form-title">Регистрация</h2>
-    <ValidationErrors
-            v-if='validationErrors'
-            :validation-errors='validationErrors'
-          />
+  <div>
+    <form class="form" id="reg-form" @submit.prevent='onSubmit'>
+      <h2 class="form-title">Регистрация</h2>
+      <ValidationErrors v-if='validationErrors' :validation-errors='validationErrors' />
 
-    <div class="input-box">
-      <label for="name" class="form-label">ФИО</label>
-      <UiInput
-        type="text" 
-        id="name" 
-        v-model.trim='username'
-        @input="validations"
-        :class="{ invalid:!isValid }"
-        />
+      <div class="input-box">
+        <label for="name" class="form-label">ФИО</label>
+        <UiInput type="text" id="name" v-model.trim='username' @input="validations" :class="{ invalid: !isValid }" />
         <p>Иванов Иван Иванович</p>
-    </div>
+      </div>
 
-    <div class="input-box">
-      <label for="email" class="form-label">E-mail</label>
-      <UiInput
-        type="email" 
-        id="email"  
-        v-model.trim='email'
-        @input="validations"
-        :class="{ invalid:!isValid }"
-        />
+      <div class="input-box">
+        <label for="email" class="form-label">E-mail</label>
+        <UiInput type="email" id="email" v-model.trim='email' @input="validations" :class="{ invalid: !isValid }" />
         <p>ggg@ff.jj</p>
+      </div>
+
+      <div class="input-box">
+        <label for="password" class="form-label">Пароль</label>
+        <UiInput type="password" class="input" id="password_1" v-model.trim='password' @input="validations"
+          :class="{ invalid: !isValid }" />
+        <font-awesome-icon v-if="showPass1" icon="fa-solid fa-eye" class="icon" @click="showPassword('1')" />
+        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-if="!showPass1" />
+        <p>abcABC123$</p>
+      </div>
+
+      <div class="input-box">
+        <label for="phone" class="form-label">Повторите пароль</label>
+        <UiInput type="password" id="password_2" v-model.trim='password_2' @input="validations"
+          :class="{ invalid: !isValid }">
+        </UiInput>
+        <font-awesome-icon v-if="showPass2" icon="fa-solid fa-eye" class="icon" @click="showPassword('2')" />
+        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('2')" v-if="!showPass2" />
+      </div>
+
+      <UiButton type="submit" class="btn" :class="{ BtnEnable: !isBtnEnable }">Зарегистрироваться</UiButton>
+    </form>
+    <div class="question-box">
+      <NuxtLink to="/login" class="form__question"> Уже есть аккaунт?</NuxtLink>
     </div>
 
-    <div class="input-box">
-      <label for="password" class="form-label">Пароль</label>
-      <UiInput
-        type="password"
-        class="input"
-        id="password_1" 
-        v-model.trim='password'
-        @input="validations"
-        :class="{ invalid:!isValid }"
-        />
-        <font-awesome-icon 
-          v-if="showPass1"
-          icon="fa-solid fa-eye" 
-          class="icon"
-          @click="showPassword('1')"
-         />
-         <font-awesome-icon 
-          icon="fa-solid fa-eye-slash" 
-          class="icon"  
-          @click="showPassword('1')"
-          v-if="!showPass1" />
-      <p>abcABC123$</p>
-    </div>
-
-    <div  class="input-box">
-      <label for="phone" class="form-label">Повторите пароль</label>
-      <UiInput
-        type="password" 
-        id="password_2"  
-        v-model.trim='password_2'
-        @input="validations"
-        :class="{ invalid:!isValid }"
-        >
-      </UiInput>
-      <font-awesome-icon
-        v-if="showPass2"
-        icon="fa-solid fa-eye" 
-        class="icon"
-        @click="showPassword('2')"
-        />
-        <font-awesome-icon 
-          icon="fa-solid fa-eye-slash" 
-          class="icon"  
-          @click="showPassword('2')"
-          v-if="!showPass2" />
-    </div>
-
-    <UiButton 
-      type="submit" 
-      class="btn"
-      :class="{ BtnEnable:!isBtnEnable }"
-      >Зарегистрироваться</UiButton>
-  </form>
-  <div class="question-box">
-    <NuxtLink to="/login" class="form__question"> Уже есть аккaунт?</NuxtLink>
+    <FormOffer />
   </div>
- 
-  <FormOffer />
-  
 </template>
 
 <script>

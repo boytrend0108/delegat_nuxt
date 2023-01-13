@@ -1,56 +1,34 @@
 <template>
-  <form 
-    class="form" 
-    id="login-form"
-    @submit.prevent='onSubmit'
-    >
-    <h2 class="form-title">Вход</h2>
+  <div>
+    <form class="form" id="login-form" @submit.prevent='onSubmit'>
+      <h2 class="form-title">Вход</h2>
 
-    <div class="input-box">
-      <label for="email" class="form-label">E-mail</label>
-      <UiInput
-        type="email" 
-        id="email" 
-        @input="validations"
-        :class="{ invalid:!isValid }"
-        v-model.trim='email'
-        />
+      <div class="input-box">
+        <label for="email" class="form-label">E-mail</label>
+        <UiInput type="email" id="email" @input="validations" :class="{ invalid: !isValid }" v-model.trim='email' />
         <p>ggg@ff.jj</p>
-    </div>
+      </div>
 
-    <div class="input-box">
-      <label for="password" class="form-label">Пароль</label>
-      <UiInput 
-       type="password"
-        class="input"
-        id="password_1" 
-        v-model.trim='password'
-        @input="validations"
-        :class="{ invalid:!isValid }"  />
-      <font-awesome-icon
-        v-show="showPass1"
-        icon="fa-solid fa-eye"
-        class="icon"
-        @click="showPassword('1')"
-        />
+      <div class="input-box">
+        <label for="password" class="form-label">Пароль</label>
+        <UiInput type="password" class="input" id="password_1" v-model.trim='password' @input="validations"
+          :class="{ invalid: !isValid }" />
         <font-awesome-icon 
-          icon="fa-solid fa-eye-slash" 
-          class="icon"  
-          @click="showPassword('1')"
-          v-show="!showPass1" />
-          <p>abcABC123$</p>
-    </div>
+          v-show="showPass1" 
+          icon="fa-solid fa-eye" 
+          class="icon" 
+          @click="showPassword('1')" />
+        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-show="!showPass1" />
+        <p>abcABC123$</p>
+      </div>
 
-    <UiButton 
-    type="submit" 
-    class="btn"
-    :class="{ BtnEnable:!isBtnEnable }"
-    >Войти</UiButton>
-  </form>
-  <div class="question-box">
-    <NuxtLink to="/registration" class="form__question"> Eще нет аккaунта?</NuxtLink>
-    <NuxtLink to="/registration" class="form__question"> Забыли пароль?</NuxtLink>
-    <FormOffer />
+      <UiButton type="submit" class="btn" :class="{ BtnEnable: !isBtnEnable }">Войти</UiButton>
+    </form>
+    <div class="question-box">
+      <!-- <NuxtLink to="/registration" class="form__question"> Eщe нет aккаунта?</NuxtLink>
+      <NuxtLink to="/registration" class="form__question"> Забыли пароль?</NuxtLink> -->
+      <FormOffer />
+    </div>
   </div>
 </template>
 

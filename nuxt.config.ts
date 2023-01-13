@@ -22,6 +22,6 @@ export default defineNuxtConfig({
       '@fortawesome/free-regular-svg-icons',
       '@fortawesome/free-brands-svg-icons',
     ]
-  }
-
+  },
+  
 })
