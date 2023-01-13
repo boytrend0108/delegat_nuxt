@@ -13,12 +13,15 @@
         <label for="password" class="form-label">Пароль</label>
         <UiInput type="password" class="input" id="password_1" v-model.trim='password' @input="validations"
           :class="{ invalid: !isValid }" />
+          <ClientOnly>
         <font-awesome-icon 
           v-show="showPass1" 
           icon="fa-solid fa-eye" 
           class="icon" 
           @click="showPassword('1')" />
-        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-show="!showPass1" />
+         
+            <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-show="!showPass1" />
+          </ClientOnly>     
         <p>abcABC123$</p>
       </div>
 

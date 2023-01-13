@@ -20,8 +20,11 @@
         <label for="password" class="form-label">Пароль</label>
         <UiInput type="password" class="input" id="password_1" v-model.trim='password' @input="validations"
           :class="{ invalid: !isValid }" />
-        <font-awesome-icon v-if="showPass1" icon="fa-solid fa-eye" class="icon" @click="showPassword('1')" />
-        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-if="!showPass1" />
+          <ClientOnly>
+            <font-awesome-icon v-if="showPass1" icon="fa-solid fa-eye" class="icon" @click="showPassword('1')" />
+            <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('1')" v-if="!showPass1" />
+          </ClientOnly>
+       
         <p>abcABC123$</p>
       </div>
 
@@ -30,8 +33,10 @@
         <UiInput type="password" id="password_2" v-model.trim='password_2' @input="validations"
           :class="{ invalid: !isValid }">
         </UiInput>
-        <font-awesome-icon v-if="showPass2" icon="fa-solid fa-eye" class="icon" @click="showPassword('2')" />
-        <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('2')" v-if="!showPass2" />
+        <ClientOnly>
+          <font-awesome-icon v-if="showPass2" icon="fa-solid fa-eye" class="icon" @click="showPassword('2')" />
+          <font-awesome-icon icon="fa-solid fa-eye-slash" class="icon" @click="showPassword('2')" v-if="!showPass2" />
+        </ClientOnly>      
       </div>
 
       <UiButton type="submit" class="btn" :class="{ BtnEnable: !isBtnEnable }">Зарегистрироваться</UiButton>
