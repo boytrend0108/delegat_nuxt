@@ -85,6 +85,12 @@ import { mapActions } from 'vuex';
       }
     },
 
+    resetForm(){
+      this.email = ''
+      this.password = ''
+      console.log('reset form')
+    },
+
     validations() {
       const btn = document.querySelector('.btn')
       btn.setAttribute('disabled', 'disabled')
