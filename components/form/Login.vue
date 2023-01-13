@@ -25,8 +25,8 @@
       <UiButton type="submit" class="btn" :class="{ BtnEnable: !isBtnEnable }">Войти</UiButton>
     </form>
     <div class="question-box">
-      <!-- <NuxtLink to="/registration" class="form__question"> Eщe нет aккаунта?</NuxtLink>
-      <NuxtLink to="/registration" class="form__question"> Забыли пароль?</NuxtLink> -->
+      <NuxtLink to="/registration" class="form__question"> Eщe нет aккаунта?</NuxtLink>
+      <NuxtLink to="/registration" class="form__question"> Забыли пароль?</NuxtLink>
       <FormOffer />
     </div>
   </div>
