@@ -88,7 +88,9 @@ import { mapActions } from 'vuex';
     resetForm(){
       this.email = ''
       this.password = ''
-      console.log('reset form')
+      
+      console.log('reset form ++')
+      console.log(this.email)
     },
 
     validations() {

@@ -2,7 +2,7 @@
   <div 
     class="dialog" 
     v-if="showDialog"
-    @click.self="resetForm"
+    @click.self="resetForm()"
     >
     <section class="dialog__content">
       <slot>
